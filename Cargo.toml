@@ -1,0 +1,17 @@
+[package]
+name = "tabulate"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Pretty-print tabular data. Port of python-tabulate to Rust."
+repository = "https://github.com/krzysztofwos/tabulate-rs"
+
+[dependencies]
+itertools = "0.12"
+once_cell = "1.19"
+regex = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+textwrap = "0.16"
+thiserror = "1.0"
+unicode-width = "0.1"

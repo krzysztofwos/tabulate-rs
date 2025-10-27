@@ -1,0 +1,596 @@
+{
+  "plain_simple": {
+    "data": [
+      ["Sun", "696000", "1989100000"],
+      ["Earth", "6371", "5973.6"],
+      ["Moon", "1737", "73.5"],
+      ["Mars", "3390", "641.85"]
+    ],
+    "kwargs": {
+      "tablefmt": "plain"
+    },
+    "output": "Sun    696000     1.9891e+09\nEarth    6371  5973.6\nMoon     1737    73.5\nMars     3390   641.85"
+  },
+  "simple_with_headers": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "simple"
+    },
+    "output": "Name      Score\n------  -------\nAlice        10\nBob        1000"
+  },
+  "pipe_alignment": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "pipe",
+      "colalign": ["left", "right"]
+    },
+    "output": "| Name   |   Score |\n|:-------|--------:|\n| Alice  |      10 |\n| Bob    |    1000 |"
+  },
+  "grid_rowalign": {
+    "data": [
+      ["Name", "Description"],
+      ["Mercury", "nearest\nplanet"],
+      ["Venus", "second\nplanet"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "grid",
+      "rowalign": "bottom"
+    },
+    "output": "+---------+---------------+\n| Name    | Description   |\n+=========+===============+\n|         | nearest       |\n| Mercury | planet        |\n+---------+---------------+\n|         | second        |\n| Venus   | planet        |\n+---------+---------------+"
+  },
+  "github_multiline": {
+    "data": [
+      ["Name", "Quote"],
+      ["Alice", "Hello\nWorld"],
+      ["Bob", "Hi"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "github"
+    },
+    "output": "| Name   | Quote       |\n|--------|-------------|\n| Alice  | Hello\nWorld |\n| Bob    | Hi          |"
+  },
+  "orgtbl_numeric": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "orgtbl"
+    },
+    "output": "| Name   |   Score |\n|--------+---------|\n| Alice  |      10 |\n| Bob    |    1000 |"
+  },
+  "psql_numbers": {
+    "data": [
+      ["planet", "radius"],
+      ["Mercury", 2440],
+      ["Venus", 6052]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "psql"
+    },
+    "output": "+----------+----------+\n| planet   |   radius |\n|----------+----------|\n| Mercury  |     2440 |\n| Venus    |     6052 |\n+----------+----------+"
+  },
+  "html_simple": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 1],
+      ["Bob", 2]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "html"
+    },
+    "output": "<table>\n<thead>\n<tr><th>Name  </th><th style=\"text-align: right;\">  Score</th></tr>\n</thead>\n<tbody>\n<tr><td>Alice </td><td style=\"text-align: right;\">      1</td></tr>\n<tr><td>Bob   </td><td style=\"text-align: right;\">      2</td></tr>\n</tbody>\n</table>"
+  },
+  "unsafehtml_simple": {
+    "data": [
+      ["Name", "Score"],
+      ["<b>Alice</b>", 10],
+      ["<i>Bob</i>", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "unsafehtml"
+    },
+    "output": "<table>\n<thead>\n<tr><th>Name        </th><th style=\"text-align: right;\">  Score</th></tr>\n</thead>\n<tbody>\n<tr><td><b>Alice</b></td><td style=\"text-align: right;\">     10</td></tr>\n<tr><td><i>Bob</i>  </td><td style=\"text-align: right;\">   1000</td></tr>\n</tbody>\n</table>"
+  },
+  "latex_table": {
+    "data": [
+      ["Planet", "Radius"],
+      ["Mercury", 2440],
+      ["Venus", 6052]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "latex"
+    },
+    "output": "\\begin{tabular}{lr}\n\\hline\n Planet   &   Radius \\\\\n\\hline\n Mercury  &     2440 \\\\\n Venus    &     6052 \\\\\n\\hline\n\\end{tabular}"
+  },
+  "latex_booktabs": {
+    "data": [
+      ["Planet", "Radius"],
+      ["Mercury", 2440],
+      ["Venus", 6052]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "latex_booktabs"
+    },
+    "output": "\\begin{tabular}{lr}\n\\toprule\n Planet   &   Radius \\\\\n\\midrule\n Mercury  &     2440 \\\\\n Venus    &     6052 \\\\\n\\bottomrule\n\\end{tabular}"
+  },
+  "grid_maxcolwidth": {
+    "data": [
+      ["Name", "Description"],
+      ["Mercury", "Nearest planet to the Sun"],
+      ["Venus", "Has a thick atmosphere"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "grid",
+      "maxcolwidths": [null, 10]
+    },
+    "output": "+---------+---------------+\n| Name    | Description   |\n+=========+===============+\n| Mercury | Nearest       |\n|         | planet to     |\n|         | the Sun       |\n+---------+---------------+\n| Venus   | Has a         |\n|         | thick         |\n|         | atmosphere    |\n+---------+---------------+"
+  },
+  "grid_disable_numparse": {
+    "data": [
+      ["Region", "Value"],
+      ["EU", "42992e1"],
+      ["US", "1000"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "grid",
+      "disable_numparse": [1]
+    },
+    "output": "+----------+---------+\n| Region   | Value   |\n+==========+=========+\n| EU       | 42992e1 |\n+----------+---------+\n| US       | 1000    |\n+----------+---------+"
+  },
+  "pipe_rowalign_mixed": {
+    "data": [
+      ["Name", "Description"],
+      ["Mercury", "nearest\nplanet"],
+      ["Venus", "second\nplanet"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "pipe",
+      "rowalign": ["top", "bottom"]
+    },
+    "output": "| Name    | Description   |\n|:--------|:--------------|\n| Mercury | nearest       |\n|         | planet        |\n| Venus   | second        |\n|         | planet        |"
+  },
+  "pipe_disable_numparse": {
+    "data": [
+      ["Region", "Value"],
+      ["EU", "42992e1"],
+      ["US", "1000"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "pipe",
+      "disable_numparse": [1]
+    },
+    "output": "| Region   | Value   |\n|:---------|:--------|\n| EU       | 42992e1 |\n| US       | 1000    |"
+  },
+  "plain_showindex": {
+    "data": [
+      ["Sun", "696000"],
+      ["Earth", "6371"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "plain",
+      "showindex": "always"
+    },
+    "output": "    Sun      696000\n 0  Earth      6371"
+  },
+  "plain_colglobal_right": {
+    "data": [
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "tablefmt": "plain",
+      "colalign": ["right", "right"]
+    },
+    "output": "Alice    10\n  Bob  1000"
+  },
+  "ansi_plain": {
+    "data": [
+      ["Name", "Value"],
+      ["\u001b[31mRed\u001b[0m", 10],
+      ["Plain", 5]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "plain"
+    },
+    "output": "Name      Value\n\u001b[31mRed\u001b[0m          10\nPlain         5"
+  },
+  "wide_grid": {
+    "data": [
+      ["Name", "Note"],
+      ["寿司", "おいしい"],
+      ["カレー", "辛い"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "grid"
+    },
+    "output": "+--------+--------+\n| Name   | Note   |\n+========+========+\n| 寿司     | おいしい   |\n+--------+--------+\n| カレー    | 辛い     |\n+--------+--------+"
+  },
+  "plain_preserve_whitespace": {
+    "data": [
+      ["Name", "Value"],
+      ["  Alice", " 10"],
+      ["Bob  ", "5"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "plain"
+    },
+    "output": "Name      Value\nAlice        10\nBob           5"
+  },
+  "mediawiki_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "mediawiki"
+    },
+    "output": "{| class=\"wikitable\" style=\"text-align: left;\"\n|+ <!-- caption -->\n|-\n! Name   !! align=\"right\"|   Score\n|-\n| Alice  || align=\"right\"|      10\n|-\n| Bob    || align=\"right\"|    1000\n|}"
+  },
+  "textile_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "textile"
+    },
+    "output": "|_.  Name   |_.   Score |\n|<. Alice   |>.      10 |\n|<. Bob     |>.    1000 |"
+  },
+  "namedtuple_keys_plain": {
+    "data": [
+      {
+        "x": 1,
+        "y": 2
+      },
+      {
+        "x": 3,
+        "y": 4
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "plain"
+    },
+    "output": "  x    y\n  1    2\n  3    4"
+  },
+  "dataclass_keys_plain": {
+    "data": [
+      {
+        "name": "Alice",
+        "age": 30
+      },
+      {
+        "name": "Bob",
+        "age": 25
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "plain"
+    },
+    "output": "name      age\nAlice      30\nBob        25"
+  },
+  "dict_iterables_mismatch_plain": {
+    "data": [
+      {
+        "name": ["Alice", "Bob", "Cara"],
+        "age": [30, 25],
+        "city": ["NYC", "Paris", "Berlin"]
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "plain"
+    },
+    "output": "name      age  city\nAlice      30  NYC\nBob        25  Paris\nCara           Berlin"
+  },
+  "dataframe_multiindex_grid": {
+    "data": [
+      {
+        "__tabulate_dataframe__": true,
+        "columns": ["A", "B"],
+        "data": [
+          [1, 5],
+          [2, 6],
+          [3, 7],
+          [4, 8]
+        ],
+        "index": [
+          "('foo', 'one')",
+          "('foo', 'two')",
+          "('bar', 'one')",
+          "('bar', 'two')"
+        ]
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "grid"
+    },
+    "output": "+----------------+-----+-----+\n|                |   A |   B |\n+================+=====+=====+\n| ('foo', 'one') |   1 |   5 |\n+----------------+-----+-----+\n| ('foo', 'two') |   2 |   6 |\n+----------------+-----+-----+\n| ('bar', 'one') |   3 |   7 |\n+----------------+-----+-----+\n| ('bar', 'two') |   4 |   8 |\n+----------------+-----+-----+"
+  },
+  "dataframe_index_label_plain": {
+    "data": [
+      {
+        "__tabulate_dataframe__": true,
+        "columns": ["name", "score"],
+        "data": [
+          ["Alice", 10],
+          ["Bob", 20]
+        ],
+        "index": ["row 1", "row 2"],
+        "index_label": "id"
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "plain"
+    },
+    "output": "id     name      score\nrow 1  Alice        10\nrow 2  Bob          20"
+  },
+  "numpy_array_plain": {
+    "data": [
+      [1, 2],
+      [3, 4]
+    ],
+    "kwargs": {
+      "tablefmt": "plain"
+    },
+    "output": "1  2\n3  4"
+  },
+  "numpy_recarray_keys_plain": {
+    "data": [
+      {
+        "__tabulate_numpy_recarray__": true,
+        "dtype": [
+          ["id", "i4"],
+          ["name", "U10"]
+        ],
+        "rows": [
+          [1, "Alice"],
+          [2, "Bob"]
+        ]
+      }
+    ],
+    "kwargs": {
+      "headers": "keys",
+      "tablefmt": "plain"
+    },
+    "output": "  id  name\n   1  Alice\n   2  Bob"
+  },
+  "latex_raw_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "latex_raw"
+    },
+    "output": "\\begin{tabular}{lr}\n\\hline\n Name   &   Score \\\\\n\\hline\n Alice  &      10 \\\\\n Bob    &    1000 \\\\\n\\hline\n\\end{tabular}"
+  },
+  "latex_raw_colalign": {
+    "data": [
+      ["Name", "Value"],
+      ["Alice", "42992e1"],
+      ["Bob", "1000"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "latex_raw",
+      "colalign": ["right", "left"]
+    },
+    "output": "\\begin{tabular}{rl}\n\\hline\n   Name & Value   \\\\\n\\hline\n  Alice & 429920  \\\\\n    Bob & 1000    \\\\\n\\hline\n\\end{tabular}"
+  },
+  "latex_longtable_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "latex_longtable"
+    },
+    "output": "\\begin{longtable}{lr}\n\\hline\n Name   &   Score \\\\\n\\hline\n\\endhead\n Alice  &      10 \\\\\n Bob    &    1000 \\\\\n\\hline\n\\end{longtable}"
+  },
+  "pretty_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "pretty"
+    },
+    "output": "+-------+-------+\n| Name  | Score |\n+-------+-------+\n| Alice |  10   |\n|  Bob  | 1000  |\n+-------+-------+"
+  },
+  "presto_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "presto"
+    },
+    "output": " Name   |   Score\n--------+---------\n Alice  |      10\n Bob    |    1000"
+  },
+  "colon_grid_alignment": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "colon_grid",
+      "colalign": ["left", "right"]
+    },
+    "output": "Name      Score\n------  -------\nAlice        10\nBob        1000"
+  },
+  "simple_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "simple_outline"
+    },
+    "output": "┌────────┬─────────┐\n│ Name   │   Score │\n├────────┼─────────┤\n│ Alice  │      10 │\n│ Bob    │    1000 │\n└────────┴─────────┘"
+  },
+  "rounded_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "rounded_outline"
+    },
+    "output": "╭────────┬─────────╮\n│ Name   │   Score │\n├────────┼─────────┤\n│ Alice  │      10 │\n│ Bob    │    1000 │\n╰────────┴─────────╯"
+  },
+  "heavy_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "heavy_outline"
+    },
+    "output": "┏━━━━━━━━┳━━━━━━━━━┓\n┃ Name   ┃   Score ┃\n┣━━━━━━━━╋━━━━━━━━━┫\n┃ Alice  ┃      10 ┃\n┃ Bob    ┃    1000 ┃\n┗━━━━━━━━┻━━━━━━━━━┛"
+  },
+  "mixed_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "mixed_outline"
+    },
+    "output": "┍━━━━━━━━┯━━━━━━━━━┑\n│ Name   │   Score │\n┝━━━━━━━━┿━━━━━━━━━┥\n│ Alice  │      10 │\n│ Bob    │    1000 │\n┕━━━━━━━━┷━━━━━━━━━┙"
+  },
+  "double_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "double_outline"
+    },
+    "output": "╔════════╦═════════╗\n║ Name   ║   Score ║\n╠════════╬═════════╣\n║ Alice  ║      10 ║\n║ Bob    ║    1000 ║\n╚════════╩═════════╝"
+  },
+  "fancy_outline_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "fancy_outline"
+    },
+    "output": "╒════════╤═════════╕\n│ Name   │   Score │\n╞════════╪═════════╡\n│ Alice  │      10 │\n│ Bob    │    1000 │\n╘════════╧═════════╛"
+  },
+  "tsv_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "tsv"
+    },
+    "output": "Name  \t  Score\nAlice \t     10\nBob   \t   1000"
+  },
+  "moinmoin_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "moinmoin"
+    },
+    "output": "|| ''' Name   ''' ||<style=\"text-align: right;\"> '''   Score ''' ||\n||  Alice   ||<style=\"text-align: right;\">       10  ||\n||  Bob     ||<style=\"text-align: right;\">     1000  ||"
+  },
+  "youtrack_basic": {
+    "data": [
+      ["Name", "Score"],
+      ["Alice", 10],
+      ["Bob", 1000]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "youtrack"
+    },
+    "output": "||  Name    ||    Score  ||\n|  Alice   |       10  |\n|  Bob     |     1000  |"
+  },
+  "disable_numparse_mixed": {
+    "data": [["Value"], ["42992e1"], ["100"]],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "plain",
+      "disable_numparse": [0]
+    },
+    "output": "Value\n42992e1\n100"
+  },
+  "maxheadercolwidths_scalar": {
+    "data": [
+      ["VeryLongHeader", "Short"],
+      ["1", "2"]
+    ],
+    "kwargs": {
+      "headers": "firstrow",
+      "tablefmt": "grid",
+      "maxheadercolwidths": 6
+    },
+    "output": "+----------+---------+\n|   VeryLo |   Short |\n|   ngHead |         |\n|       er |         |\n+==========+=========+\n|        1 |       2 |\n+----------+---------+"
+  }
+}
