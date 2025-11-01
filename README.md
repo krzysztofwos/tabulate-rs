@@ -53,6 +53,30 @@ println!("{table}");
 - Regenerate Python fixtures via `python /tmp/generate_snapshots.py` after adding new cases.
 - The crate re-exports the table format registry so custom `TableFormat` instances can be supplied via `TabulateOptions::table_format_custom`.
 
+## Examples
+
+Run the basic example:
+
+```bash
+cargo run --example basic
+```
+
+This prints:
+
+```
++----------+---------------+---------------------+
+| Planet   |   Radius (km) |     Mass (10^24 kg) |
++==========+===============+=====================+
+| Mercury  |          2440 |               0.33  |
++----------+---------------+---------------------+
+| Venus    |          6052 |               4.87  |
++----------+---------------+---------------------+
+| Earth    |          6371 |               5.97  |
++----------+---------------+---------------------+
+| Mars     |          3390 |               0.642 |
++----------+---------------+---------------------+
+```
+
 ## License
 
 MIT OR Apache-2.0
