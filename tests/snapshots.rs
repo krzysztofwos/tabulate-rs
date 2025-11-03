@@ -1,7 +1,7 @@
 use std::{collections::BTreeMap, fs::File, io::BufReader};
 
 use serde::Deserialize;
-use tabulate::{
+use tabulate_rs::{
     Alignment, HeaderAlignment, Headers, RowAlignment, ShowIndex, TabulateOptions, tabulate,
 };
 

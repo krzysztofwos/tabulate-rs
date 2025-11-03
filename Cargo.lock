@@ -181,7 +181,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "tabulate"
+name = "tabulate-rs"
 version = "0.1.0"
 dependencies = [
  "itertools",

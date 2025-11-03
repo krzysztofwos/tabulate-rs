@@ -1,4 +1,4 @@
-use tabulate::{Headers, TabulateOptions, tabulate};
+use tabulate_rs::{Headers, TabulateOptions, tabulate};
 
 fn main() {
     let planets = vec![

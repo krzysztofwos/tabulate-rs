@@ -2,7 +2,7 @@ use std::collections::BTreeMap;
 
 use serde::Serialize;
 use serde_json::{Value, json};
-use tabulate::{
+use tabulate_rs::{
     Alignment, FormatSpec, Headers, RowAlignment, SEPARATING_LINE, ShowIndex, TabulateError,
     TabulateOptions, simple_separated_format, tabulate,
 };
